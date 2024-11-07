@@ -50,15 +50,15 @@ nav a:hover {
 
 section {
     background: #ffffff;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
+    padding: 10px;
+    margin: 100px 0;
+    border-radius: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.1s, box-shadow 1s;
 }
 
 section:hover {
-    transform: translateY(-5px);
+    transform: translateY(-300px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
