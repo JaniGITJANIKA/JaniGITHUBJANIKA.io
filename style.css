@@ -98,3 +98,9 @@ img {
         margin: 0 10px;
     }
 }
+
+#counterp {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+}

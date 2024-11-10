@@ -21,14 +21,23 @@
         </section>
     </div>
 
+    <p id="counterp">0</p>
+
     <footer>
         <p>Simogatható feletem</p>
     </footer>
     <h1>Reklám</h1>
-    <p><a href="https://al3x.hu" target="_blank">Fedezd fel az Al3x weboldalt, ahol a tudás és kreativitás találkozik! 🌟
+    <a href="https://al3x.hu" target="_blank">Fedezd fel az Al3x weboldalt, ahol a tudás és kreativitás találkozik! 🌟
 <br>
 Lépj be a digitális világba Al3x segítségével, és ismerd meg a legújabb projekteket, amelyek inspirálnak és motiválnak. Legyen szó programozásról, dizájnról vagy technológiai újdonságokról, itt mindent megtalálsz, amire szükséged van a sikerhez.
  <br>       
-Csatlakozz hozzánk, és válj részévé egy dinamikus közösségnek, ahol a tanulás és a fejlődés sosem áll meg. Kattints most, és fedezd fel, mi mindent kínál az Al3x weboldal! 🚀</a></p>
+Csatlakozz hozzánk, és válj részévé egy dinamikus közösségnek, ahol a tanulás és a fejlődés sosem áll meg. Kattints most, és fedezd fel, mi mindent kínál az Al3x weboldal! 🚀</a>
+<script>
+    counter = 0;
+    function onHover() {
+        counter += 1;
+        document.getElementById('counterp').innerHTML = counter;
+    }
+</script>
 </body>
 </html>
