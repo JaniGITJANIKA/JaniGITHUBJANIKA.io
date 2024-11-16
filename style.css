@@ -1,107 +1,34 @@
-/* Alapstílusok */
 body {
-    font-family: 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    text-align: center; /* Középre igazítás */
+    font-family: Arial, sans-serif; /* Szebb betűtípus */
 }
 
-/* Fejléc */
-header {
-    background: #0a192f;
-    color: #ffffff;
-    padding: 30px 0;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: 700;
-}
-
-/* Navigáció */
-nav {
+h1 {
     margin: 20px 0;
 }
 
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background 0.3s;
+h1 span img {
+    vertical-align: middle; /* Igazítás a szöveg közepéhez */
+    border-radius: 10px; /* Lekerekített sarkok */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Animáció */
+}
+h1 span img:hover {
+    transform: scale(1.1); /* Kicsit nagyobb kép hoverre */
+    border-color: lime; /* Keret színének megváltoztatása hoverre */
 }
 
-nav a:hover {
-    background: #f36f6f;
+h1 span {
+    display: inline-block; /* Együtt tartja a képet és a szöveget */
 }
 
-/* Fő tartalom */
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+p a img {
+    margin: 10px; /* Távolság a képek között */
+    border: 2px solid #ddd; /* Dekoratív keret */
+    border-radius: 10px; /* Lekerekített sarkok */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Animáció */
 }
 
-section {
-    background: #ffffff;
-    padding: 10px;
-    margin: 100px 0;
-    border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.1s, box-shadow 1s;
-}
-
-section:hover {
-    transform: translateY(-300px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-    color: #0a192f;
-    border-bottom: 2px solid #e2e2e2;
-    padding-bottom: 10px;
-}
-
-/* Lábjegyzet */
-footer {
-    text-align: center;
-    padding: 15px 0;
-    background: #0a192f;
-    color: #ffffff;
-}
-
-/* Kép stílusok */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Mobilbarát */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
-
-    header h1 {
-        font-size: 2em;
-    }
-
-    nav a {
-        margin: 0 10px;
-    }
-}
-
-#counterp {
-    position: fixed;
-    right: 5px;
-    bottom: 5px;
-    font-size: 150%;
+p a img:hover {
+    transform: scale(1.1); /* Kicsit nagyobb kép hoverre */
+    border-color: lime; /* Keret színének megváltoztatása hoverre */
 }
