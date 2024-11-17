@@ -1,6 +1,7 @@
+/* Alapstílusok */
 body {
-    text-align: center; /* Középre igazítás */
-    font-family: Arial, sans-serif; /* Szebb betűtípus */
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -11,10 +12,6 @@ h1 span img {
     vertical-align: middle; /* Igazítás a szöveg közepéhez */
     border-radius: 10px; /* Lekerekített sarkok */
     transition: transform 0.3s ease, border-color 0.3s ease; /* Animáció */
-}
-h1 span img:hover {
-    transform: scale(1.1); /* Kicsit nagyobb kép hoverre */
-    border-color: lime; /* Keret színének megváltoztatása hoverre */
 }
 
 h1 span {
@@ -31,4 +28,46 @@ p a img {
 p a img:hover {
     transform: scale(1.1); /* Kicsit nagyobb kép hoverre */
     border-color: lime; /* Keret színének megváltoztatása hoverre */
+}
+
+/* Kép konténer */
+.visszani {
+    position: relative; /* A képek egymásra helyezéséhez */
+    display: inline-block;
+}
+
+/* Az alapértelmezett kép stílusa */
+.homeikon {
+    border: 2px solid #ddd; /* Dekoratív keret */
+    border-radius: 10px; /* Lekerekített sarkok */
+}
+
+/* Hover hatás az első képen */
+.homeikon:hover {
+    border: 2px solid lime;
+}
+
+/* A második kép rejtett alapértelmezetten */
+.vissza {
+    position: absolute; /* A második képet az elsőre helyezzük */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Lekerekített sarkok */
+    opacity: 0; /* Kezdetben átlátszó */
+    transition: opacity 0.3s ease; /* Animáció: áttűnés */
+}
+
+/* Amikor az egér a képre megy */
+.visszani:hover .vissza {
+    opacity: 1; /* A második kép láthatóvá válik */
+}
+
+.visszani:hover .homeikon {
+    opacity: 0; /* Az első kép elhalványul */
+}
+
+h1 hr {
+    color: black;
 }
