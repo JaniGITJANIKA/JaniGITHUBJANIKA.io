@@ -92,3 +92,10 @@ p a img:hover {
 h1 hr {
     color: black;
 }
+p {
+    display: flex; /* Flexbox elrendezés */
+    flex-wrap: wrap; /* Sor törése, ha nem fér el */
+    justify-content: center; /* Tartalom középre igazítása */
+    align-items: center; /* Vertikális középre igazítás */
+    gap: 20px; /* Távolság a képek/videók között */
+}

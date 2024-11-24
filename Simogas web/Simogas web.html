@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Ne lépj ki!</title>
+    <title>Simogasd meg!</title>
 </head>
+
 <body>
     <header>
         <h1>Simogas web</h1>
@@ -14,30 +16,35 @@
         </nav>
     </header>
 
-    <div class="container" onmouseover="onHover()">
-        <section>
+    <div class="container">
+        <section class="gb" onmouseover="simogasg()">
             <h2>Simogas meg</h2>
-            <p>Elagol ne vigyéz</p>
+            <p>De cuki kutya!</p>
+        </section>
+        <img src="kepek/happy dog.gif" alt="happy dog" onmouseover="simogask()">
+        <section class="gj" onmouseover="simogasg()">
+            <h2>Simogas meg</h2>
+            <p>De cuki kutya!</p>
         </section>
     </div>
 
-    <p id="counterp">0</p>
-
+    <p id="counter">0</p>
     <footer>
         <p>Simogatható feletem</p>
     </footer>
-    <h1>Reklám</h1>
-    <a href="https://al3x.hu" target="_blank">Fedezd fel az Al3x weboldalt, ahol a tudás és kreativitás találkozik! 🌟
-<br>
-Lépj be a digitális világba Al3x segítségével, és ismerd meg a legújabb projekteket, amelyek inspirálnak és motiválnak. Legyen szó programozásról, dizájnról vagy technológiai újdonságokról, itt mindent megtalálsz, amire szükséged van a sikerhez.
- <br>       
-Csatlakozz hozzánk, és válj részévé egy dinamikus közösségnek, ahol a tanulás és a fejlődés sosem áll meg. Kattints most, és fedezd fel, mi mindent kínál az Al3x weboldal! 🚀</a>
-<script>
-    counter = 0;
-    function onHover() {
-        counter += 1;
-        document.getElementById('counterp').innerHTML = counter;
-    }
-</script>
+
+    <script>
+        counter = 0;
+        function simogasg() {
+            counter += 1;
+            document.getElementById('counter').innerHTML = counter;
+        }
+        function simogask() {
+            counter += 100;
+            document.getElementById('counter').innerHTML = counter;
+        }
+
+    </script>
 </body>
+
 </html>
