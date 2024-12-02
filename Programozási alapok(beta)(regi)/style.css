@@ -1,0 +1,38 @@
+body {
+    background-color: #000; /* LCD háttér: fekete */
+    color: #0f0; /* LCD szöveg: zöld */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Press Start 2P', monospace;
+}
+a {
+    text-decoration: none; /* Aláhúzás eltávolítása */
+    color: navy; /* Alap link színe: piros */
+    font-weight: bold; /* Vastag betű */
+}
+a:hover {
+   color: #00ff00; /* Színváltozás egérrel való rámutatáskor */
+}
+.cim {
+    font-size: 2.5em;
+    animation: blink 5s steps(1) infinite; /* Villogó animáció */
+}
+
+.downloads {
+    animation: blink 5s steps(1) infinite; /* Villogó animáció */
+    font-size: 1.2em;
+}
+
+@keyframes blink {
+5% {
+    opacity: 1; /* Látható */
+}
+95% {
+    opacity: 0.5; /* Láthatatlan */
+}
+}
+img {
+    background-color: white;
+}
