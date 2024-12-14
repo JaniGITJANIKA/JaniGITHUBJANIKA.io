@@ -90,7 +90,9 @@ p a img:hover {
 }
 
 h1 hr {
-    color: black;
+    color:black;
+    height: 3px;
+    background-color: black;
 }
 p {
     display: flex; /* Flexbox elrendezés */

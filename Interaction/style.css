@@ -35,6 +35,10 @@ nav a {
     padding: 10px 15px;
     border-radius: 5px;
     transition: background 0.3s;
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    -ms-transition: background 0.3s;
+    -o-transition: background 0.3s;
 }
 
 nav a:hover {
@@ -52,8 +56,7 @@ nav a:hover {
     overflow: hidden;         /* Elrejti a konténeren kívüli tartalmat */
 }
 
-
-
+/* Szakasz stílusok */
 section {
     background: #ffffff;
     padding: 10px;
@@ -67,8 +70,9 @@ section {
     transform: translateX(-300px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
+
 .gj:hover {
-    transform: translateX( 300px);
+    transform: translateX(300px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -81,15 +85,13 @@ h2 {
 /* Lábjegyzet */
 footer {
     text-align: center;
-    padding: 15px 0;
-    background: #0a192f;
     color: #ffffff;
 }
 
 /* Kép stílusok */
 img {
-    width: 220;
-    height: 270;
+    width: 220px;
+    height: 270px;
     border-radius: 8px;
 }
 
@@ -108,10 +110,72 @@ img {
     }
 }
 
-#counter {
+.pont {
     color: #e2e2e2;
     position: fixed;
     right: 5px;
     bottom: 5px;
     font-size: 200%;
+}
+
+/* Busz (többi elem eltávolítva) */
+body { 
+    text-align: top;
+    margin: 0; 
+    overflow: hidden; 
+}
+
+canvas { 
+    position: fixed;
+    display: block; 
+}
+
+#timer-container {
+    color: white;
+    font-size: 20px;
+}
+/* tábla */
+table, tr, td, th {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: lightblue;
+}
+table, tr, td, th {
+    border-radius: 100%;
+    border: 10px solid black;
+    border-collapse: collapse;
+}
+td, th {
+    font-size: 10px;
+    color: #33ff00;
+    font-family: Arial, Helvetica, sans-serif;
+}
+td:hover {
+    color: brown;
+    border-radius: 0%;
+    font-size: 50px;
+}
+tr:hover {
+    border-bottom: blue;
+    justify-content: left;
+}
+th:hover {
+    border-radius: 20%;
+    color: blueviolet;
+    font-size: 300px;
+}
+table:hover {
+    display: block;
+}
+
+.deltag {
+    color: #33ff00;
+    font-size: 5px;
+}
+
+.deltag:hover {
+    color: black;
+    font-size: 10px
 }

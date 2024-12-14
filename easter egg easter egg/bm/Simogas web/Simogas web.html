@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simogasd meg!</title>
+</head>
+
+<body>
+    <header>
+        <h1>Simogas web</h1>
+        <nav>
+            <a href="../index.html">Vissza a Jani webre.</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="gb" onmouseover="simogasg()">
+            <h2>Simogas meg</h2>
+            <p>De cuki kutya!</p>
+        </section>
+        <img src="kepek/happy dog.gif" alt="happy dog" onmouseover="simogask()" class="no-drag">
+        <section class="gj" onmouseover="simogasg()">
+            <h2>Simogas meg</h2>
+            <p>De cuki kutya!</p>
+        </section>
+    </div>
+    <p class="pont">Pontszám: <span id="counter">0</span></p>
+
+    <!-- Játék -->
+    <div id="game">
+        <div id="timer-container">
+            <span id="timer-label">Busz idő: </span>
+            <span id="timer">0:00</span>
+            <span>(3p)</span>
+        </div>
+        <div id="game-area"></div>
+    </div>
+
+    <footer>
+        <p>Simogatható feletem</p>
+    </footer>
+
+    <script>
+        let counter = 0;
+        let timerElement = document.getElementById("timer");
+        let gameArea = document.getElementById("game-area");
+        let timer;
+        let randomTimeInSeconds;
+
+        function simogasg() {
+            counter += 1;
+            document.getElementById('counter').innerHTML = counter;
+        }
+
+        function simogask() {
+            counter += 10;
+            document.getElementById('counter').innerHTML = counter;
+        }
+
+        function startGame() {
+            timerElement.style.color = "white";
+            timerElement.textContent = "0:00";
+
+            randomTimeInSeconds = Math.floor(Math.random() * 181) + 120; // 2-5 perc között
+
+            timer = setInterval(() => {
+                let time = parseInt(timerElement.textContent.split(':')[0]) * 60 + parseInt(timerElement.textContent.split(':')[1]);
+                time += 1;
+
+                // A formázott idő perc:másodperc formátumban
+                timerElement.textContent = formatTime(time);
+
+                if (time >= randomTimeInSeconds) {
+                    generateImages();
+                }
+            }, 1000);
+        }
+
+        function formatTime(timeInSeconds) {
+            const minutes = Math.floor(timeInSeconds / 60);
+            const seconds = timeInSeconds % 60;
+            return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function generateImages() {
+            clearInterval(timer);
+            timerElement.style.color = parseInt(timerElement.textContent.split(':')[0]) < 3 ? "green" : "red";
+
+            let img1 = document.createElement("img");
+            let img2 = document.createElement("img");
+
+            img1.src = "kepek/image1.png";  // Az első kép
+            img2.src = "kepek/image3.png";  // A második kép
+
+            img1.className = "game-image";
+            img2.className = "game-image";
+
+            img1.draggable = true;
+            img2.draggable = false;
+
+            img1.id = "image1";
+            img2.id = "image3";
+
+            img1.style.position = "absolute";
+            img2.style.position = "absolute";
+
+            // Random pozíció generálása
+            placeImage(img1);
+            placeImage(img2);
+
+            gameArea.appendChild(img1);
+            gameArea.appendChild(img2);
+
+            img1.addEventListener("dragstart", (e) => {
+                e.dataTransfer.setData("text", e.target.id);
+            });
+
+            img2.addEventListener("dragover", (e) => e.preventDefault());
+
+            img2.addEventListener("drop", (e) => {
+                let droppedId = e.dataTransfer.getData("text");
+                if (droppedId === "image1") {
+                    counter += 500;
+                    document.getElementById('counter').innerHTML = counter;
+                    resetGame();
+                }
+            });
+        }
+
+        function placeImage(img) {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+
+            img.style.left = x + "px";
+            img.style.top = y + "px";
+
+            img.style.width = "10vw";
+            img.style.height = "auto";
+        }
+
+        function resetGame() {
+            gameArea.innerHTML = "";
+            startGame();
+        }
+
+        document.querySelectorAll('.no-drag').forEach((element) => {
+    element.draggable = false;
+});
+
+        // Indítás
+        window.onload = startGame;
+    </script>
+</body>
+</html>

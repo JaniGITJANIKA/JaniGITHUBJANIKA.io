@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Simulator Jojo.2</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <h1>Irányitás: wasd, nyílak<br>Ajtónyitás: e</h1><hr>
+    <canvas id="gameCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById('gameCanvas');
+        var ctx = canvas.getContext('2d');
+        var bus = { x: 100, y: 100, width: 50, height: 30, doorOpen: false };
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function drawBus() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Tisztítja a képernyőt
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(bus.x, bus.y, bus.width, bus.height); // A busz kirajzolása
+
+            // Az ajtó
+            ctx.fillStyle = bus.doorOpen ? 'red' : 'green';
+            ctx.fillRect(bus.x + bus.width - 10, bus.y, 10, bus.height); // Ajtó
+        }
+
+        function moveBus() {
+            if (keys['w']) bus.y -= 5;
+            if (keys['s']) bus.y += 5;
+            if (keys['a']) bus.x -= 5;
+            if (keys['d']) bus.x += 5;
+            if (keys['ArrowUp']) bus.y -= 5;
+            if (keys['ArrowDown']) bus.y += 5;
+            if (keys['ArrowLeft']) bus.x -= 5;
+            if (keys['ArrowRight']) bus.x += 5;
+        }
+
+        var keys = {};
+
+        window.addEventListener('keydown', function (e) {
+            keys[e.key] = true;
+            if (e.key === 'e') {
+                bus.doorOpen = !bus.doorOpen; // E gomb nyomása az ajtót nyitja/zárja
+            }
+        });
+
+        window.addEventListener('keyup', function (e) {
+            keys[e.key] = false;
+        });
+
+        function gameLoop() {
+            moveBus();
+            drawBus();
+            requestAnimationFrame(gameLoop);
+        }
+        
+
+        gameLoop(); // Indítja a játékhurkot
+        
+    </script>
+   
+    
+</body>
+</html>

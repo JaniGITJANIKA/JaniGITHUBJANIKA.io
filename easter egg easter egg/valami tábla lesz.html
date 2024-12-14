@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200">
+    <title>valami tábla lesz</title>
+    <style>
+        body,
+        html {
+            margin: 10%;
+            padding: 0;
+            height: 75%
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: lightblue;
+        }
+
+        body {
+            background-color: aqua;
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            border-radius: 100%;
+            border: 10px solid black;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            font-size: 50px;
+            color: #33ff00;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        td:hover {
+            color: brown;
+            border-radius: 0%;
+            font-size: 50px;
+        }
+
+        tr:hover {
+            border-bottom: blue;
+            justify-content: left;
+        }
+
+        th:hover {
+            border-radius: 20%;
+            color: blueviolet;
+            font-size: 300px;
+        }
+
+        table:hover {
+            display: block;
+        }
+
+        .deltag {
+            color: #33ff00;
+            font-size: 5px;
+        }
+
+        .deltag:hover {
+            color: black;
+            font-size: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th rowspan="2" colspan="2"><del>kljjljkl</del></th>
+            <td><b>grrere</b></td>
+            <td>trer</td>
+        </tr>
+        <tr>
+            <td>ggd</td>
+            <td>gg</td>
+        </tr>
+        <tr>
+            <td><i>ttr</i></td>
+            <td>ghhdfh</td>
+            <td>gffgf</td>
+            <td>fggd</td>
+        </tr>
+        <tr>
+            <td>fgf</td>
+            <td>fggf</td>
+            <td>fgg</td>
+            <td><a href="../deltag.html" class="deltag"><del>"deltag"</del></a></td>
+        </tr>
+    </table>
+</body>
+
+</html>
