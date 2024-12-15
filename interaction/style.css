@@ -39,6 +39,10 @@ nav a {
     -moz-transition: background 0.3s;
     -ms-transition: background 0.3s;
     -o-transition: background 0.3s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 nav a:hover {
@@ -47,13 +51,20 @@ nav a:hover {
 
 /* Fő tartalom */
 .container {
-    width: 90%;               /* A konténer szélessége */
-    margin: 0 auto;           /* Középre igazítja vízszintesen a konténert */
-    display: flex;            /* Flexbox elrendezés */
-    align-items: center;      /* Függőleges középre helyezés */
-    justify-content: center;  /* Vízszintes középre helyezés */
-    gap: 20px;                /* Távolság az elemek között */
-    overflow: hidden;         /* Elrejti a konténeren kívüli tartalmat */
+    width: 90%;
+    /* A konténer szélessége */
+    margin: 0 auto;
+    /* Középre igazítja vízszintesen a konténert */
+    display: flex;
+    /* Flexbox elrendezés */
+    align-items: center;
+    /* Függőleges középre helyezés */
+    justify-content: center;
+    /* Vízszintes középre helyezés */
+    gap: 20px;
+    /* Távolság az elemek között */
+    overflow: hidden;
+    /* Elrejti a konténeren kívüli tartalmat */
 }
 
 /* Szakasz stílusok */
@@ -64,16 +75,32 @@ section {
     border-radius: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.1s, box-shadow 1s;
+    -webkit-transition: transform 0.1s, box-shadow 1s;
+    -moz-transition: transform 0.1s, box-shadow 1s;
+    -ms-transition: transform 0.1s, box-shadow 1s;
+    -o-transition: transform 0.1s, box-shadow 1s;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
 .gb:hover {
     transform: translateX(-300px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateX(-300px);
+    -moz-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    -o-transform: translateX(-300px);
 }
 
 .gj:hover {
     transform: translateX(300px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateX(300px);
+    -moz-transform: translateX(300px);
+    -ms-transform: translateX(300px);
+    -o-transform: translateX(300px);
 }
 
 h2 {
@@ -93,6 +120,10 @@ img {
     width: 220px;
     height: 270px;
     border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
 }
 
 /* Mobilbarát */
@@ -119,63 +150,94 @@ img {
 }
 
 /* Busz (többi elem eltávolítva) */
-body { 
+body {
     text-align: top;
-    margin: 0; 
-    overflow: hidden; 
+    margin: 0;
+    overflow: hidden;
 }
 
-canvas { 
+canvas {
     position: fixed;
-    display: block; 
+    display: block;
 }
 
 #timer-container {
     color: white;
     font-size: 20px;
 }
+
 /* tábla */
-table, tr, td, th {
+table,
+tr,
+td,
+th {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     background-color: lightblue;
 }
-table, tr, td, th {
+
+table,
+tr,
+td,
+th {
     border-radius: 100%;
     border: 10px solid black;
     border-collapse: collapse;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
 }
-td, th {
+
+td,
+th {
     font-size: 10px;
     color: #33ff00;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 td:hover {
     color: brown;
     border-radius: 0%;
     font-size: 50px;
+    -webkit-border-radius: 0%;
+    -moz-border-radius: 0%;
+    -ms-border-radius: 0%;
+    -o-border-radius: 0%;
 }
+
 tr:hover {
     border-bottom: blue;
     justify-content: left;
 }
+
 th:hover {
     border-radius: 20%;
     color: blueviolet;
     font-size: 300px;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
 }
+
 table:hover {
     display: block;
 }
 
-.deltag {
+.tag {
     color: #33ff00;
     font-size: 5px;
 }
 
-.deltag:hover {
+.tag:hover {
     color: black;
     font-size: 10px
+}
+
+/* Az aláhúzás eltávolítása a linkekről */
+a {
+    text-decoration: none;
 }

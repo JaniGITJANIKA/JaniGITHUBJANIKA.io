@@ -12,17 +12,16 @@
         <span>
             <img class="homeikon" src="thumbnail/Home.png" alt="Home.png" title="Otthon vagy.">
         </span>
-        <span style="color: lime; font-size: 5em;">Jani</span>
-        <span style="color: navy; font-size: 3em;">web</span>
+        <span style="color: lime; font-size: 5em;">Jani</span><span style="color: navy; font-size: 3em;">web</span>
     </h1>
 
-    <h1><a href="Interaction/Interaction.html">
+    <h1><a href="interaction/interaction.html">
             <hr>
         </a></h1>
 
     <p>
         <span>
-            <a href="Power Point/Power Point.html">
+            <a href="powerpoint/powerpoint.html">
                 <img src="thumbnail/Power Point.png" alt="PowerPoint bemutató" title="PowerPoint bemutató" width="200"
                     height="200">
             </a>
@@ -35,5 +34,9 @@
             </a>
         </span>
     </p>
+    <script>
+        document.querySelectorAll('img').forEach((element) => {
+            element.draggable = false;})
+    </script>
 </body>
 </html>

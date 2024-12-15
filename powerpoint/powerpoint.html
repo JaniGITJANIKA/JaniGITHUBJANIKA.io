@@ -14,8 +14,7 @@
             <!-- A második kép, amely megjelenik hover esetén -->
             <a href="../index.html"><img class="vissza" src="../thumbnail/Vissza.png" alt="vissza.png"></a>
         </span>
-        <span style="color: lime; font-size: 5em;">Jani</span>
-        <span style="color: navy; font-size: 3em;">web</span>
+        <span style="color: lime; font-size: 5em;">Jani</span><span style="color: navy; font-size: 3em;">web</span>
     </h1>
     <h1><a href="../Simogas web/Simogas web.html"><hr></a></h1>
     <p>
@@ -23,6 +22,10 @@
             <img src="thumbnail/A naprendszer és az űrteleszkópok(Jani).png" alt="A naprendszer és az űrteleszkópok(Jani)" title="A naprendszer és az űrteleszkópok(Jani).png" width="356" height="200">
         </a>
     </p>
+    <script>
+        document.querySelectorAll('img').forEach((element) => {
+            element.draggable = false;})
+    </script>
 </body>
 
 </html>
