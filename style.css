@@ -2,6 +2,10 @@
 body {
     text-align: center;
     font-family: Arial, sans-serif;
+    background-image: url('thumbnail/karacsonyikep.png'); /* Helyes szintaxis a háttérkép beállításához */
+    background-size: cover; /* A kép méretének beállítása, hogy lefedje az egész hátteret */
+    background-position: center; /* A kép középre igazítása */
+    background-repeat: no-repeat; /* A kép ismétlésének letiltása */
 }
 
 h1 {
@@ -70,14 +74,19 @@ p a img:hover {
 
 /* A második kép rejtett alapértelmezetten */
 .vissza {
-    position: absolute; /* A második képet az elsőre helyezzük */
-    top: 0;
+    position: absolute;
+    /*Amásodikképetazelsőrehelyezzük*/top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px; /* Lekerekített sarkok */
-    opacity: 0; /* Kezdetben átlátszó */
-    transition: opacity 0.3s ease; /* Animáció: áttűnés */
+    border-radius: 10px;
+    /*Lekerekítettsarkok*/opacity: 0;
+    /*Kezdetbenátlátszó*/transition: opacity 0.3s ease;
+    /*Animáció: áttűnés */;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
 }
 
 /* Amikor az egér a képre megy */
