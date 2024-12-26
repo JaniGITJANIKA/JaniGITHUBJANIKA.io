@@ -2,10 +2,6 @@
 body {
     text-align: center;
     font-family: Arial, sans-serif;
-    background-image: url('thumbnail/karacsonyikep.png'); /* Helyes szintaxis a háttérkép beállításához */
-    background-size: cover; /* A kép méretének beállítása, hogy lefedje az egész hátteret */
-    background-position: center; /* A kép középre igazítása */
-    background-repeat: no-repeat; /* A kép ismétlésének letiltása */
 }
 
 h1 {
