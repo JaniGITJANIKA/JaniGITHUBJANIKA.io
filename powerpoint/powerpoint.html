@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="hu">
 
 <head>
@@ -6,29 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janiweb</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        body {margin-top: 200px;}/* Nagy üres rész a tetején */
+        @media (max-width: 600px) {body {margin-top: 140px;}}
+        @media (max-height: 600px) {body {margin-top: 140px;}}
+    </style>
+        <meta property="og:title" content="Janiweb">
+        <meta property="og:description" content="Fedezd fel, mit tartogat számodra a Janiweb, kattints és nézd meg most!">
+        <meta property="og:image" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/reklam.png">
+        <meta property="og:image:width" content="540">
+        <meta property="og:image:height" content="540">
+        <meta property="og:video" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/reklam.mp4">
+        <meta property="og:video:type" content="video/mp4">
+        <meta property="og:video:width" content="480">
+        <meta property="og:video:height" content="480">
+        <meta property="og:url" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/">
+        <meta property="og:type" content="video">
 </head>
 
-<body>
-    <h1>
-        <span class="visszani">
-            <img class="ikon" src="../thumbnail/Power Point.png" alt="Power Point.png">
-            <!-- A második kép, amely megjelenik hover esetén -->
-            <a href="../index.html"><img class="vissza" src="../thumbnail/Vissza.png" alt="vissza.png"></a>
-        </span>
-        <span style="color: lime; font-size: 5em;">Jani</span><span style="color: navy; font-size: 3em;">web</span>
-    </h1>
-    <h1><a href="../Simogas web/Simogas web.html"><hr></a></h1>
+<body style="align-items: center;">
+    <a class="web" href="../index.html">
+        <p class="cim cp">
+            <span class="jani">Jani</span><span class="web">web</span><br>
+            <span class="websz">PowerPoint bemutatók</span>
+        <span class="websz cimf">Kattintásra letölti a bemutatókat!</span></p>
+    </a>
     <p>
-        <a href="ppt(x)/A naprendszer és az űrteleszkópok(Jani).pptx">
-            <img src="thumbnail/A naprendszer és az űrteleszkópok(Jani).png" alt="A naprendszer és az űrteleszkópok(Jani)" title="A naprendszer és az űrteleszkópok(Jani).png" width="356" height="200">
-        </a>
-    </p>
-    <p style="font-size: 3em;background-color: yellow;">
-        2025.01.01-től elérhető a teljesen felújított Janiweb!
-    </p>
+        <div class="hik-container">
+            <div class="hik p1" data-href="ppt(x)/A naprendszer és az űrteleszkópok(Jani).pptx" data-video-src="thumbnail/p1.mp4" data-size="2000000">
+                <div class="valasztekok">
+                    <video class="reklam" muted loop>
+                        <!-- A videó forrása később lesz beállítva -->
+                    </video>
+                    <span>Ez egy Naprendszer és űrteleszkópos kviz.</span>
+                </div>
+            </div>
+            <!-- Így kell hozzáadni egy új elemet:
+            <div class="hik p1" data-href="ppt(x)/A naprendszer és az űrteleszkópok(Jani).pptx" data-video-src="thumbnail/p1.mp4" data-size="2000000">
+                <div class="valasztekok">
+                    <video class="reklam" muted loop>
+                        (A videó forrása később lesz beállítva)
+                    </video>
+                    <span>Ez egy Naprendszer és űrteleszkópos kviz.</span>
+                </div>
+            </div> -->
+        </div>
     <script>
         document.querySelectorAll('img').forEach((element) => {
-            element.draggable = false;})
+            element.draggable = false;
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const hikElements = document.querySelectorAll(".hik.p1");
+            const maxMemoryUsage = 200 * 1024 * 1024; // 200 MB
+            const minMemoryUsage = 150 * 1024 * 1024; // 150 MB (200 MB - 50 MB)
+            let currentMemoryUsage = 0;
+            const loadedElements = [];
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    const hikElement = entry.target;
+                    const video = hikElement.querySelector("video.reklam");
+                    if (entry.isIntersecting) {
+                        if (!hikElement.dataset.loaded) {
+                            hikElement.dataset.loaded = true;
+                            hikElement.innerHTML = `
+                                <a href="${hikElement.dataset.href}" download>
+                                    <div class="valasztekok">
+                                        <video class="reklam" muted loop data-src="${hikElement.dataset.videoSrc}">
+                                            <source src="${hikElement.dataset.videoSrc}" type="video/mp4">
+                                        </video>
+                                        <span>Ez egy Naprendszer és űrteleszkópos kviz.</span>
+                                    </div>
+                                </a>
+                            `;
+                            currentMemoryUsage += parseInt(hikElement.dataset.size, 10);
+                            loadedElements.push(hikElement);
+                        }
+                        const video = hikElement.querySelector("video.reklam");
+                        if (video && !video.src) {
+                            video.src = video.getAttribute('data-src');
+                        }
+                        video.play();
+                    } else {
+                        video.pause();
+                        if (video.src) {
+                            currentMemoryUsage -= parseInt(hikElement.dataset.size, 10);
+                            video.removeAttribute('src');
+                            video.load();
+                            const index = loadedElements.indexOf(hikElement);
+                            if (index > -1) {
+                                loadedElements.splice(index, 1);
+                            }
+                        }
+                    }
+                });
+
+                // Ellenőrizzük a memóriahasználatot és eltávolítjuk a videókat, ha szükséges
+                while (currentMemoryUsage > maxMemoryUsage && loadedElements.length > 0) {
+                    const hikElement = loadedElements.shift();
+                    const video = hikElement.querySelector("video.reklam");
+                    currentMemoryUsage -= parseInt(hikElement.dataset.size, 10);
+                    video.pause();
+                    video.removeAttribute('src');
+                    video.load();
+                }
+            }, { threshold: 0.1 });
+
+            hikElements.forEach(hikElement => {
+                observer.observe(hikElement);
+            });
+        });
     </script>
 </body>
 

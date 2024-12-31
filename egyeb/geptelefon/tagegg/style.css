@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.top-text,
+.bottom-text {
+    font-size: 40px
+}
+
+.responsive-text {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid;
+}
+
+/* Az első szöveg színei */
+.highlighted-text {
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 50px;
+    /* A szöveget 10px-re a tetejére pozicionáljuk */
+}
+.highlighted-text:hover .blue{
+    color: gray;
+}
+
+.highlighted-text .green {
+    font-size: 50px;
+    color: greenyellow;
+}
+
+.highlighted-text .blue {
+    font-size: 30px;
+    color: #00ff;
+}
+
+.container {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    /* Ez biztosítja, hogy a szövegek ne takarják el egymást */
+}
+
+.s1 {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 200%;
+}
+
+.s2 {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 200%;
+}
+
+.s3 {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 200%;
+    }
+
+.s4 {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 200%;
+}
+
+/* Az aláhúzás eltávolítása a linkekről */
+a {
+    text-decoration: none;
+}

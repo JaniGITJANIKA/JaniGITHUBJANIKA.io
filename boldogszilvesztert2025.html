@@ -1,0 +1,103 @@
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janiweb</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {margin-top: 0px;}/* Nagy üres rész a tetején */
+        @media (max-width: 600px) {body {margin-top:0px;}}
+        @media (max-height: 600px) {body {margin-top:0px;}}
+        .tj {background-color: transparent;border-radius: 100%;position: fixed; z-index: 2000;transform: rotate(0deg);left: 0%; bottom: -200px;animation-name: tj;transition-timing-function: linear; animation-duration: 3s;}
+        @keyframes tj {
+    60% {bottom: 60%; left: 20%;}
+    70% {transform: rotate(90deg);}
+    80% {bottom: 60%;transform: rotate(90deg);left: 20%;}
+    100% {bottom: 60%;transform: rotate(90deg);left: 40%;}
+        }
+        .tw {background-color: transparent;border-radius: 100%;position: fixed; z-index: 2000;transform: rotate(0deg);right: 0%; bottom: -200px;animation-name: tw;transition-timing-function: linear; animation-duration: 3s;}
+        @keyframes tw {
+    60% {bottom: 40%; right: 20%;}
+    70% {transform: rotate(-90deg);}
+    80% {bottom: 40%;transform: rotate(-90deg);right: 20%;}
+    100% {bottom: 40%;transform: rotate(-90deg);right: 40%;}
+        }
+        .tr {display: block;animation-name: tr; animation-duration: 3s;animation-timing-function: linear;
+        width: 100%;}
+        @keyframes tr {
+            0% {opacity: 0%;}
+            95% {opacity: 0%;}
+            100% {opacity: 100%;;}
+        }
+    </style>
+        <meta property="og:title" content="Janiweb (Boldog szilvesztert!)">
+        <meta property="og:description" content="Búék!">
+        <meta property="og:image" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/boldogszilvesztert2025.png">
+        <meta property="og:image:width" content="815">
+        <meta property="og:image:height" content="815">
+        <meta property="og:video" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/reklam.mp4">
+        <meta property="og:video:type" content="video/mp4">
+        <meta property="og:video:width" content="480">
+        <meta property="og:video:height" content="480">
+        <meta property="og:url" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/">
+        <meta property="og:type" content="video">
+</head>
+
+<body>
+    <p class="tr" style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: greenyellow;position: relative;top: 180px;text-align: center;background-color: transparent;font-size: 50px;"><b>2025</b></p>
+    <img src="thumbnail/tr.gif" class="tr">
+    <p class="tr" style="color: greenyellow;background-color: navy;text-align: center;position: relative; top: -20;">Boldog szilvesztert!</p>
+    <video autoplay muted loop class="tw">
+        <source src="thumbnail/tw.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop class="tj">
+        <source src="thumbnail/tj.mp4" type="video/mp4">
+    </video>
+    <a class="web" href="#">
+        <p class="cim fo">
+            <span class="jani">Jani</span><span class="web">web</span>
+        </p>
+    </a>
+    <a href="powerpoint/powerpoint.html">
+        <div class="hi p">
+            <div class="valasztek">
+                <video autoplay muted loop class="reklam">
+                    <source src="thumbnail/powerpoint.mp4" type="video/mp4">
+                </video>
+                <span>PowerPoint prezentációk amit mind én készítettem.</span>
+            </div>
+        </div>
+    </a>
+    <br>
+    <a href="egyeb/egyeb.html">
+        <div class="hi e">
+            <div class="valasztek">
+                <video autoplay muted loop class="reklam">
+                    <source src="thumbnail/egyeb.mp4" type="video/mp4">
+                </video>
+                <span>Egyéb tartalmak.</span>
+            </div>
+        </div>
+    </a>
+    <p style="text-align: center; width: calc(100% - 80px); margin: 40 40px; color: white; background-color: navy;">
+        Reklám</p>
+    <a href="https://al3x.hu" target="_blank" title="Al3x.hu">
+        <div class="hi ar">
+            <div class="valasztek">
+                <video autoplay muted loop class="reklam">
+                    <source src="https://al3x.hu/reklam.mp4" type="video/mp4">
+                </video>
+                <span>Itt éppen az osztály társamat Al3x-et reklámozom.</span>
+            </div>
+        </div>
+    </a>
+    <a href="thumbnail/janiwebqr.png" download><p class="tun" style="text-align: center;width: 600px;margin-bottom:0px;margin-top:50px;margin-left:auto;margin-right: auto;align-items: center;font-size: 20px;background-color: yellow;">Kattintásra megnyitja vagy letölti a kártyát!</p></a>
+    <p class="qr"><a href="thumbnail/janiwebqr.png" download><img src="thumbnail/janiwebqr.png" alt="QR"></a></p>
+    <script>
+        document.querySelectorAll('img').forEach((element) => {
+            element.draggable = false;
+        })
+    </script>
+</body>
+
+</html>

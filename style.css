@@ -1,108 +1,211 @@
-/* Alapstílusok */
-body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-
-h1 {
-    margin: 20px 0;
-}
-
-h1 span img {
-    width: 200px;  /* Fix méret */
-    height: 200px;
-    vertical-align: middle; /* Igazítás a szöveg közepéhez */
-    border-radius: 10px; /* Lekerekített sarkok */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Animáció */
-}
-
-h1 span {
-    display: inline-block; /* Együtt tartja a képet és a szöveget */
-}
-
-p a img {
-    margin: 10px; /* Távolság a képek között */
-    border: 2px solid #ddd; /* Dekoratív keret */
-    border-radius: 10px; /* Lekerekített sarkok */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Animáció */
-}
-
-p a img:hover {
-    transform: scale(1.1); /* Kicsit nagyobb kép hoverre */
-    border-color: lime; /* Keret színének megváltoztatása hoverre */
-}
-
-.reklam {
-    width: 200px;  /* Fix méret */
-    height: 200px;
-    margin: 10px; /* Távolság a képek között */
-    border: 2px solid #ddd; /* Dekoratív keret */
-    border-radius: 10px; /* Lekerekített sarkok */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Animáció */
-}
-
-.reklam:hover {
-    transform: scale(1.1); /* Kicsit nagyobb kép hoverre */
-    border-color: #b74b4b; /* Keret színének megváltoztatása hoverre */
-}
-
-p a img:hover {
-    transform: scale(1.1); /* Kicsit nagyobb kép hoverre */
-    border-color: lime; /* Keret színének megváltoztatása hoverre */
-}
-
-/* Kép konténer */
-.visszani {
-    position: relative; /* A képek egymásra helyezéséhez */
-    display: inline-block;
-}
-
-/* Az alapértelmezett kép stílusa */
-.homeikon {
-    border: 2px solid #ddd; /* Dekoratív keret */
-    border-radius: 10px; /* Lekerekített sarkok */
-}
-
-/* Hover hatás az első képen */
-.homeikon:hover {
-    border: 2px solid lime;
-}
-
-/* A második kép rejtett alapértelmezetten */
-.vissza {
-    position: absolute;
-    /*Amásodikképetazelsőrehelyezzük*/top: 0;
-    left: 0;
+body, html {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    /*Lekerekítettsarkok*/opacity: 0;
-    /*Kezdetbenátlátszó*/transition: opacity 0.3s ease;
-    /*Animáció: áttűnés */;
-    -webkit-transition: opacity 0.3s ease;
-    -moz-transition: opacity 0.3s ease;
-    -ms-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
-}
-
-/* Amikor az egér a képre megy */
-.visszani:hover .vissza {
-    opacity: 1; /* A második kép láthatóvá válik */
-}
-
-.visszani:hover .homeikon {
-    opacity: 0; /* Az első kép elhalványul */
-}
-
-h1 hr {
-    color:black;
-    height: 3px;
     background-color: black;
 }
-p {
-    display: flex; /* Flexbox elrendezés */
-    flex-wrap: wrap; /* Sor törése, ha nem fér el */
-    justify-content: center; /* Tartalom középre igazítása */
-    align-items: center; /* Vertikális középre igazítás */
-    gap: 20px; /* Távolság a képek/videók között */
+p, .valasztek, .valasztekok, .valasztekocka {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    right: auto;
+    left: auto;
+    color: black;
+    font-size: 200%;
+}
+.jani {
+    color: greenyellow;
+    font-size: 100px;
+}
+.web {
+    font-size: 90px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+}
+img, video {
+    border-radius: 10px;
+    vertical-align: top;
+    height: 200px;
+}
+.valasztek {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.valasztek img {
+    margin-right: 10px;
+    flex-shrink: 0;
+    max-width: 100%;
+}
+.valasztek span {
+    flex: 1 1 0;
+    word-break: break-word;
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+.valasztekok {
+    width: 355px;
+}
+.valasztekocka {
+    width: 200px;
+}
+.valasztekok img {
+    max-width: 100%;
+}
+.hi, .hik {
+    transition: 0.3s ease;
+}
+.hik {
+    margin: 8px 8px;
+    display: inline-block;
+}
+.hik:hover {
+    border-radius: 10px;
+}
+.hi:hover {
+    border-radius: 10px;
+    margin: 10px;
+}
+.p:hover {
+    outline: 10px solid #ff9769;
+}
+.e:hover {
+    outline:10px solid grey;
+}
+.ar:hover {
+    outline: 10px solid red;
+}
+.qr img:hover {
+    outline: 10px outset blue;
+}
+.p1:hover {
+    outline: 10px solid blue;
+}
+.protectedLink {
+    border-color: aqua;
+}
+.cim {
+    transition: color 0.3s ease;
+    position: fixed;
+    top: -200px;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    text-align: center;
+}
+.cp {
+    background-color: #ff9769;
+}
+.ce {
+    background-color: grey;
+}
+.fo {
+    background-color: navy;
+}
+.cim:hover, .cim:hover .web {
+    color: black;
+}
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+}
+.qr {
+    text-align: center;
+    background-color: transparent;
+}
+.qr img {
+    width: 600px;
+    height: 300px;
+    border-radius: 10px;
+    transition: outline 0.3s ease;
+}
+.websz {
+    font-size: 25px;
+}
+.cimf {
+    background-color: yellow;
+    text-align: center;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 140px;
+    left: 0px;
+    border-radius: 10px;
+}
+.pass {
+    /*display: none;
+    (eztcsakakkorhaaztszeretnémhogycsakakkorjelenjenmegamikorrákattintanak.)*/border: 10px solid blue;
+    width: 180px;
+    border-radius: 10px;
+    position: absolute;
+    top: 60%;
+    right: 0%;
+}
+@media (max-width: 600px) {
+    .valasztek, .valasztekok, .valasztekocka {
+        flex-direction: column;
+    }
+    .cim {
+        top:-35px;
+    }
+    .valasztek img, .valasztek video, .valasztekok img, .valasztekok video, .valasztekok, .valasztekocka, .valasztekocka img, .valasztekocka video {
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+    }
+    .jani {
+        font-size: 130%;
+    }
+    .web {
+        font-size: 100%;
+    }
+    .qr,.tun {
+        display: none
+    }
+    .websz {
+        font-size: 80%;
+    }
+    .cimf {
+        font-size: 20px;
+        top: 90px;
+    }
+    .pass {
+        top: 120%;
+        left: 0%;
+    }
+}
+@media (max-height: 600px) {
+    .cim {
+        top:-35px;
+    }
+    .jani {
+        font-size: 130%;
+    }
+    .web {
+        font-size: 100%;
+    }
+    .qr,.tun {
+        display: none
+    }
+    .websz {
+        font-size: 80%;
+    }
+    .cimf {
+        font-size: 20px;
+        top: 90px;
+    }
 }

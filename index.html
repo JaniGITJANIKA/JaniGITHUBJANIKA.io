@@ -1,11 +1,14 @@
-<!DOCTYPE html>
 <html lang="hu">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janiweb</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {margin-top: 140px;}/* Nagy üres rész a tetején */
+        @media (max-width: 600px) {body {margin-top: 100px;}}
+        @media (max-height: 600px) {body {margin-top: 100px;}}
+    </style>
     <meta property="og:title" content="Janiweb">
     <meta property="og:description" content="Fedezd fel, mit tartogat számodra a Janiweb, kattints és nézd meg most!">
     <meta property="og:image" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/reklam.png">
@@ -18,40 +21,99 @@
     <meta property="og:url" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/">
     <meta property="og:type" content="video">
 </head>
-
 <body>
-    <h1>
-        <span>
-            <img class="homeikon" src="thumbnail/Home.png" alt="Home.png" title="Otthon vagy.">
-        </span>
-        <span style="color: lime; font-size: 5em;">Jani</span><span style="color: navy; font-size: 3em;">web</span>
-    </h1>
-
-    <h1><a href="interaction/interaction.html">
-            <hr>
-        </a></h1>
-
-    <p>
-        <span>
-            <a href="powerpoint/powerpoint.html">
-                <img src="thumbnail/Power Point.png" alt="PowerPoint bemutató" title="PowerPoint bemutató" width="200"
-                    height="200">
-            </a>
-        </span>
-        <span>
-            <a href="https://al3x.hu" target="_blank" title="Al3x.hu">
+    <a class="web" href="#">
+        <p class="cim fo">
+            <span class="jani">Jani</span><span class="web">web</span>
+        </p>
+    </a>
+    <a href="powerpoint/powerpoint.html">
+    <div class="hi p">
+            <div class="valasztek">
+                <video autoplay muted loop class="reklam">
+                    <source src="thumbnail/powerpoint.mp4" type="video/mp4">
+                </video>
+                <span>PowerPoint prezentációk amit mind én készítettem.</span>
+            </div>
+        </div>    
+    </a>
+    <br>
+    <a href="#" id="protectedLink">
+        <div class="hi e">
+            <div class="valasztek">
+                <video autoplay muted loop class="reklam">
+                    <source src="thumbnail/egyeb.mp4" type="video/mp4">
+                </video>
+                <span>Egyéb tartalmak.</span>
+            </div>
+        </div>
+    </a>
+    <br>
+    <!-- Jelszó panel -->
+    <div class="pass" id="passwordPanel">
+        <form id="passwordForm">
+            <label for="password">Jelszó:</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Belépés</button>
+        </form>
+    </div>
+    <p style="text-align: center; width: calc(100% - 80px); margin: 40 40px; color: white; background-color: navy;">
+        Reklám</p>
+    <a href="https://al3x.hu" target="_blank" title="Al3x.hu">
+        <div class="hi ar">
+            <div class="valasztek">
                 <video autoplay muted loop class="reklam">
                     <source src="https://al3x.hu/reklam.mp4" type="video/mp4">
                 </video>
-            </a>
-        </span>
-    </p>
-    <p style="font-size: 3em;background-color: yellow;">
-        2025.01.01-től elérhető a teljesen felújított Janiweb!
-    </p>
+                <span>Itt éppen az osztály társamat Al3x-et reklámozom.</span>
+            </div>
+        </div>
+    </a>
+    <a href="thumbnail/janiwebqr.png" download><p class="tun" style="text-align: center;width: 600px;margin-bottom:0px;margin-top:50px;margin-left:auto;margin-right: auto;align-items: center;font-size: 20px;background-color: yellow;">Kattintásra megnyitja vagy letölti a kártyát!</p></a>
+    <p class="qr"><a href="thumbnail/janiwebqr.png" download><img src="thumbnail/janiwebqr.png" alt="QR"></a></p>
     <script>
         document.querySelectorAll('img').forEach((element) => {
-            element.draggable = false;})
+            element.draggable = false;
+        });
+
+        // Ellenőrizzük, hogy a jelszó már el lett-e mentve
+        const savedPasswordTime = localStorage.getItem('passwordSavedTime');
+        const currentTime = new Date().getTime();
+        const oneHour = 60 * 60 * 1000; // Egy óra milliszekundumban
+
+        function isPasswordValid() {
+            return savedPasswordTime && (currentTime - savedPasswordTime < oneHour);
+        }
+
+        if (isPasswordValid()) {
+            document.querySelectorAll('.pass').forEach((element) => {
+                element.style.display = 'none';
+            });
+        }
+
+        document.getElementById('protectedLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            if (isPasswordValid()) {
+                window.location.href = 'egyeb/egyeb.html';
+            } else {
+                document.getElementById('passwordPanel').style.display = 'block';
+            }
+        });
+
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var password = document.getElementById('password').value;
+            if (password === 'easteregg') {
+                // Jelszó mentése és időbélyeg hozzáadása
+                localStorage.setItem('passwordSavedTime', new Date().getTime());
+                window.location.href = 'egyeb/egyeb.html';
+            } else {
+                alert('Helytelen jelszó!');
+                document.getElementById('password').value = ''; // Jelszó mező törlése
+                // document.getElementById('passwordPanel').style.display = 'none';
+            }
+        });
     </script>
 </body>
+
 </html>

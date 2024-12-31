@@ -1,0 +1,72 @@
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janiweb</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {margin-top: 180px;} /* Nagy üres rész a tetején */
+        @media (max-width: 600px) {
+            body {margin-top: 120;}
+        }
+        .t {display: none;}
+        .mobile .g {display: none;}
+        .mobile .t {display: block;}
+    </style>
+    <!-- Ami csak gépre való az g class
+     Ami mindkettőre nem kell class
+     Ami csak telefonra az t class -->
+</head>
+
+<body style="align-items: center;">
+    <a class="web" href="../index.html">
+        <p class="cim ce">
+            <span class="jani">Jani</span><span class="web">web</span><br>
+            <span class="websz t">Egyéb tartalmak📱</span>
+            <span class="websz g">Egyéb tartalmak🖥</span>
+        </p>
+    </a>
+    <p>
+        <div class="hik-container">
+            <div class="hik p1 g">
+                <a href="gep/interaction/interaction.html">
+                    <div class="valasztekocka">
+                        <video autoplay muted loop class="reklam">
+                            <source src="../thumbnail/interaction.mp4" type="video/mp4">
+                        </video>
+                        <span>Interactálj meg.</span>
+                    </div>
+                </a>
+            </div>
+            <div class="hik p1 g">
+                <a href="geptelefon/Bus Simulator Jojo.2.html">
+                    <div class="valasztekocka">
+                        <video autoplay muted loop class="reklam">
+                            <source src="../thumbnail/busjojo.mp4" type="video/mp4">
+                        </video>
+                        <span>Bus Simulator Jojo</span>
+                    </div>
+                </a>
+            </div>
+            <div class="hik p1">
+                <a href="geptelefon/tagegg/iemtag.html">
+                    <div class="valasztekocka">
+                        <video autoplay muted loop class="reklam">
+                            <source src="../thumbnail/tagegg.mp4" type="video/mp4">
+                        </video>
+                        <span>A tagegg univerzuma.</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <script>
+            // Ellenőrizzük, hogy az eszköz Android vagy iPhone-e vagy iPad-e.
+            if (/Android|iPad|iPhone/i.test(navigator.userAgent)) {
+                document.body.classList.add('mobile');
+            }
+            console.log(navigator.userAgent);
+        </script>
+</body>
+
+</html>
