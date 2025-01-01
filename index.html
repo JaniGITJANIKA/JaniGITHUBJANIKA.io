@@ -5,71 +5,40 @@
     <title>Janiweb</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body {margin-top: 0px;}/* Nagy üres rész a tetején */
-        @media (max-width: 600px) {body {margin-top:0px;}}
-        @media (max-height: 600px) {body {margin-top:0px;}}
-        .tj {background-color: transparent;border-radius: 100%;position: fixed; z-index: 2000;transform: rotate(0deg);left: 0%; bottom: -200px;animation-name: tj;transition-timing-function: linear; animation-duration: 3s;}
-        @keyframes tj {
-    60% {bottom: 60%; left: 20%;}
-    70% {transform: rotate(90deg);}
-    80% {bottom: 60%;transform: rotate(90deg);left: 20%;}
-    100% {bottom: 60%;transform: rotate(90deg);left: 40%;}
-        }
-        .tw {background-color: transparent;border-radius: 100%;position: fixed; z-index: 2000;transform: rotate(0deg);right: 0%; bottom: -200px;animation-name: tw;transition-timing-function: linear; animation-duration: 3s;}
-        @keyframes tw {
-    60% {bottom: 40%; right: 20%;}
-    70% {transform: rotate(-90deg);}
-    80% {bottom: 40%;transform: rotate(-90deg);right: 20%;}
-    100% {bottom: 40%;transform: rotate(-90deg);right: 40%;}
-        }
-        .tr {display: block;animation-name: tr; animation-duration: 3s;animation-timing-function: linear;
-        width: 100%;}
-        @keyframes tr {
-            0% {opacity: 0%;}
-            95% {opacity: 0%;}
-            100% {opacity: 100%;;}
-        }
+        body {margin-top: 140px;}/* Nagy üres rész a tetején */
+        @media (max-width: 600px) {body {margin-top: 100px;}}
+        @media (max-height: 600px) {body {margin-top: 100px;}}
     </style>
-        <meta property="og:title" content="Janiweb (Boldog szilvesztert!)">
-        <meta property="og:description" content="Búék!">
-        <meta property="og:image" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/reklamsz2025.png">
-        <meta property="og:image:width" content="815">
-        <meta property="og:image:height" content="815">
-        <meta property="og:video" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/reklam.mp4">
-        <meta property="og:video:type" content="video/mp4">
-        <meta property="og:video:width" content="480">
-        <meta property="og:video:height" content="480">
-        <meta property="og:url" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/">
-        <meta property="og:type" content="video">
+    <meta property="og:title" content="Janiweb">
+    <meta property="og:description" content="Fedezd fel, mit tartogat számodra a Janiweb, kattints és nézd meg most!">
+    <meta property="og:image" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/reklam.png">
+    <meta property="og:image:width" content="540">
+    <meta property="og:image:height" content="540">
+    <meta property="og:video" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/reklam.mp4">
+    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:video:width" content="480">
+    <meta property="og:video:height" content="480">
+    <meta property="og:url" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/">
+    <meta property="og:type" content="video">
 </head>
-
 <body>
-    <p class="tr" style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: greenyellow;position: relative;top: 180px;text-align: center;background-color: transparent;font-size: 50px;"><b>2025</b></p>
-    <img src="thumbnail/tr.gif" class="tr">
-    <p class="tr" style="color: greenyellow;background-color: navy;text-align: center;position: relative; top: -20;">Boldog szilvesztert!</p>
-    <video autoplay muted loop class="tw">
-        <source src="thumbnail/tw.mp4" type="video/mp4">
-    </video>
-    <video autoplay muted loop class="tj">
-        <source src="thumbnail/tj.mp4" type="video/mp4">
-    </video>
     <a class="web" href="#">
         <p class="cim fo">
             <span class="jani">Jani</span><span class="web">web</span>
         </p>
     </a>
     <a href="powerpoint/powerpoint.html">
-        <div class="hi p">
+    <div class="hi p">
             <div class="valasztek">
                 <video autoplay muted loop class="reklam">
                     <source src="thumbnail/powerpoint.mp4" type="video/mp4">
                 </video>
                 <span>PowerPoint prezentációk amit mind én készítettem.</span>
             </div>
-        </div>
+        </div>    
     </a>
     <br>
-    <a href="egyeb/egyeb.html">
+    <a href="#" id="protectedLink">
         <div class="hi e">
             <div class="valasztek">
                 <video autoplay muted loop class="reklam">
@@ -79,6 +48,15 @@
             </div>
         </div>
     </a>
+    <br>
+    <!-- Jelszó panel -->
+    <div class="pass" id="passwordPanel">
+        <form id="passwordForm">
+            <label for="password">Jelszó:</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Belépés</button>
+        </form>
+    </div>
     <p style="text-align: center; width: calc(100% - 80px); margin: 40 40px; color: white; background-color: navy;">
         Reklám</p>
     <a href="https://al3x.hu" target="_blank" title="Al3x.hu">
@@ -96,7 +74,45 @@
     <script>
         document.querySelectorAll('img').forEach((element) => {
             element.draggable = false;
-        })
+        });
+
+        // Ellenőrizzük, hogy a jelszó már el lett-e mentve
+        const savedPasswordTime = localStorage.getItem('passwordSavedTime');
+        const currentTime = new Date().getTime();
+        const oneHour = 60 * 60 * 1000; // Egy óra milliszekundumban
+
+        function isPasswordValid() {
+            return savedPasswordTime && (currentTime - savedPasswordTime < oneHour);
+        }
+
+        if (isPasswordValid()) {
+            document.querySelectorAll('.pass').forEach((element) => {
+                element.style.display = 'none';
+            });
+        }
+
+        document.getElementById('protectedLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            if (isPasswordValid()) {
+                window.location.href = 'egyeb/egyeb.html';
+            } else {
+                document.getElementById('passwordPanel').style.display = 'block';
+            }
+        });
+
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var password = document.getElementById('password').value;
+            if (password === 'easteregg') {
+                // Jelszó mentése és időbélyeg hozzáadása
+                localStorage.setItem('passwordSavedTime', new Date().getTime());
+                window.location.href = 'egyeb/egyeb.html';
+            } else {
+                alert('Helytelen jelszó!');
+                document.getElementById('password').value = ''; // Jelszó mező törlése
+                // document.getElementById('passwordPanel').style.display = 'none';
+            }
+        });
     </script>
 </body>
 
