@@ -8,26 +8,186 @@
         body {margin-top: 140px;}/* Nagy üres rész a tetején */
         @media (max-width: 600px) {body {margin-top: 100px;}}
         @media (max-height: 600px) {body {margin-top: 100px;}}
+        .bloker {top: 0px;position: fixed;background-color: black;z-index: 3000;;width: 100%;;height: 100%;animation-duration: 2s;animation-delay: 0s;animation-name: bloker;}
+        @keyframes bloker {
+            0% {display: block;opacity: 0;}
+            80% {opacity: 0.5;}
+            100% {opacity: 1;}
+        }
+        .phu {
+            bottom: -100px;
+            right: 0px;
+            display: flex;
+            z-index: 3001;
+            position: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-size: 100px;
+            animation-name: phu;
+            animation-duration: 2s;
+        }
+        @keyframes phu {
+            0% {display: block;opacity: 0;top: 1000px;}
+            30% {opacity: 1;top: 1000px;}
+            70% {top: -110px;}
+        }
+        .cim, .fo {
+            animation-name: cim;
+            animation-duration: 2s;
+            animation-delay: 1s;
+        }
+        @keyframes cim {
+            100% {top:-600px}
+        }
+        .janiwebphu {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            z-index: 3002;
+            position: fixed;
+            right: calc(50% - 180px);
+            animation-name: jlpu;
+            animation-duration: 4s;
+            top: 50px;
+            border-radius: 10px;
+            background-color: navy;
+            padding: 10px;
+        }
+        @keyframes jlpu {
+            0% {top:-120px;}
+            80% {top: -120px;}
+            100% {top: 50px;}
+        }
+        .tj {background-color: transparent;border-radius: 100%;position: fixed; z-index: 3001;transform: rotate(0deg);left: 0%; bottom: -200px;animation-name: tj;transition-timing-function: linear; animation-duration: 3s;}
+        @keyframes tj {
+    60% {bottom: 75%; left: 20%;}
+    70% {transform: rotate(90deg);}
+    80% {bottom: 75%;transform: rotate(90deg);left: 20%;}
+    100% {bottom: 75%;transform: rotate(90deg);left: 40%;}
+        }
+        .tw {background-color: transparent;border-radius: 100%;position: fixed; z-index: 3001;transform: rotate(0deg);right: 0%; bottom: -200px;animation-name: tw;transition-timing-function: linear; animation-duration: 3s;}
+        @keyframes tw {
+        60% {bottom: 55%; right: 20%;}
+        70% {transform: rotate(-90deg);}
+        80% {bottom: 55%;transform: rotate(-90deg);right: 20%;}
+        100% {bottom: 55%;transform: rotate(-90deg);right: 40%;}
+        }
+        .irany {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-size: 40px;
+            position: fixed;
+            z-index: 3001;
+            top: 180px;
+            right: calc(50% - 168px);
+            background-color: navy;
+            border-radius: 10px;
+            animation-name: irany;
+            animation-duration: 5s;
+        }
+        .iranyj {
+            animation-name: irany;
+            animation-duration: 5s;
+        }
+        @keyframes irany {
+            0% {color: transparent;background-color: transparent;}
+            80% {color: transparent;background-color: transparent;top: 100px;}
+            100% {top: 180px;}
+        }
+        .kerem {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-size: 25px;
+            background-color: navy;
+            position: fixed;
+            z-index: 3001;
+            right: calc(50% - 169px);
+            border-radius: 10px;
+            top: 330px;
+            animation-name: kerem;
+            animation-duration: 8s;
+        }
+        @keyframes kerem {
+            0% {top: 180px;color: transparent;background-color: transparent;}
+            80% {top: 180px;color: transparent;background-color: transparent;}
+        }
+        .qrj {
+            position: fixed;
+            top: 0px;
+            z-index: 3002;
+            width: 300px;
+            height: 300px;
+            border: white 15px solid;
+            right: calc(50% - 165px);
+            top: 380px;
+            animation-name: qrj;
+            animation-duration: 9s;
+        }
+        @keyframes qrj {
+            0% {display: none;}
+            90% {display: none;}
+            }
+        .figyelmj {
+            position: fixed;
+            z-index: 3001;
+            color: black;
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 22px;
+            top: 250px;
+            border-radius: 10px;
+            text-align: center;
+            animation-name: qrj;
+            animation-duration: 10s;
+            width: 400px;
+            right: calc(50% - 200px);
+        }
+        .link {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 3003;
+            top: 0px;
+            animation-name: link;
+            animation-duration: 4s;
+        }
+        @keyframes link {
+            0% {display: none;}
+            90% {display: none;}
+            100% {display: block;}
+        }
     </style>
-    <meta property="og:title" content="Janiweb">
-    <meta property="og:description" content="Fedezd fel, mit tartogat számodra a Janiweb, kattints és nézd meg most!">
-    <meta property="og:image" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/reklam.png">
-    <meta property="og:image:width" content="540">
-    <meta property="og:image:height" content="540">
-    <meta property="og:video" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/reklam.mp4">
-    <meta property="og:video:type" content="video/mp4">
-    <meta property="og:video:width" content="480">
-    <meta property="og:video:height" content="480">
-    <meta property="og:url" content="https://janigitjanika.github.io/JaniGITHUBJANIKA.io/">
-    <meta property="og:type" content="video">
+     <meta property="og:title" content="Janiweb">
+     <meta property="og:description" content="Fedezd fel, mit tartogat számodra a Janiweb, kattints és nézd meg most!">
+     <meta property="og:image" content="https://janiweb.eu/reklam.png">
+     <meta property="og:image:width" content="540">
+     <meta property="og:image:height" content="540">
+     <meta property="og:video" content="https://janiweb.eu/reklam.mp4">
+     <meta property="og:video:type" content="video/mp4">
+     <meta property="og:video:width" content="480">
+     <meta property="og:video:height" content="480">
+     <meta property="og:url" content="https://janiweb.eu">
+     <meta property="og:type" content="video">
 </head>
 <body>
+    <img class="qrj" src="thumbnail/janiweb.huQRcode.png" alt="Kérem olvas be telefonon is.">
+    <video autoplay muted loop class="tw">
+        <source src="thumbnail/tw.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop class="tj">
+        <source src="thumbnail/tj.mp4" type="video/mp4">
+    </video>
     <a class="web" href="#">
         <p class="cim fo">
             <span class="jani">Jani</span><span class="web">web</span>
         </p>
     </a>
-    <a href="powerpoint/powerpoint.html">
+    <a href="https://janiweb.eu"><div class="link"></div></a>
+    <div class="figyelmj">Ez a domain név hamarosan meg fog szűni kérem térjen át a Janiweb.eu-ra.</div>
+    <div class="kerem">Kérem mutasd meg másnak is</div>
+    <div class="irany">Irány a <span class="iranyj" style="color: greenyellow;">Jani</span>web.eu</div>
+    <div class="bloker"></div>
+    <div class="phu">.eu</div>
+    <div class="janiwebphu"><span style="font-size:80px;color: greenyellow;">Jani</span><span style="font-size: 60px;color: white;">web.eu</span></div>
     <div class="hi p">
             <div class="valasztek">
                 <video autoplay muted loop class="reklam">
@@ -36,9 +196,7 @@
                 <span>PowerPoint prezentációk amit mind én készítettem.</span>
             </div>
         </div>    
-    </a>
     <br>
-    <a href="#" id="protectedLink">
         <div class="hi e">
             <div class="valasztek">
                 <video autoplay muted loop class="reklam">
@@ -47,19 +205,9 @@
                 <span>Egyéb tartalmak.</span>
             </div>
         </div>
-    </a>
     <br>
-    <!-- Jelszó panel -->
-    <div class="pass" id="passwordPanel">
-        <form id="passwordForm">
-            <label for="password">Jelszó:</label>
-            <input type="password" id="password" name="password">
-            <button type="submit">Belépés</button>
-        </form>
-    </div>
     <p style="text-align: center; width: calc(100% - 80px); margin: 40 40px; color: white; background-color: navy;">
         Reklám</p>
-    <a href="https://al3x.hu" target="_blank" title="Al3x.hu">
         <div class="hi ar">
             <div class="valasztek">
                 <video autoplay muted loop class="reklam">
@@ -68,50 +216,11 @@
                 <span>Itt éppen az osztály társamat Al3x-et reklámozom.</span>
             </div>
         </div>
-    </a>
-    <a href="thumbnail/janiwebqr.png" download><p class="tun" style="text-align: center;width: 600px;margin-bottom:0px;margin-top:50px;margin-left:auto;margin-right: auto;align-items: center;font-size: 20px;background-color: yellow;">Kattintásra megnyitja vagy letölti a kártyát!</p></a>
+    <a href="thumbnail/janiwebqr.png" download><p class="tun" style="text-align: center;width: 600px;margin-bottom:0px;margin-top:50px;margin-left:auto;margin-right: auto;align-items: center;font-size: 20px;background-color: yellow;">Kattintásra letölti a kártyát!</p></a>
     <p class="qr"><a href="thumbnail/janiwebqr.png" download><img src="thumbnail/janiwebqr.png" alt="QR"></a></p>
     <script>
         document.querySelectorAll('img').forEach((element) => {
             element.draggable = false;
-        });
-
-        // Ellenőrizzük, hogy a jelszó már el lett-e mentve
-        const savedPasswordTime = localStorage.getItem('passwordSavedTime');
-        const currentTime = new Date().getTime();
-        const oneHour = 60 * 60 * 1000; // Egy óra milliszekundumban
-
-        function isPasswordValid() {
-            return savedPasswordTime && (currentTime - savedPasswordTime < oneHour);
-        }
-
-        if (isPasswordValid()) {
-            document.querySelectorAll('.pass').forEach((element) => {
-                element.style.display = 'none';
-            });
-        }
-
-        document.getElementById('protectedLink').addEventListener('click', function(event) {
-            event.preventDefault();
-            if (isPasswordValid()) {
-                window.location.href = 'egyeb/egyeb.html';
-            } else {
-                document.getElementById('passwordPanel').style.display = 'block';
-            }
-        });
-
-        document.getElementById('passwordForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var password = document.getElementById('password').value;
-            if (password === 'easteregg') {
-                // Jelszó mentése és időbélyeg hozzáadása
-                localStorage.setItem('passwordSavedTime', new Date().getTime());
-                window.location.href = 'egyeb/egyeb.html';
-            } else {
-                alert('Helytelen jelszó!');
-                document.getElementById('password').value = ''; // Jelszó mező törlése
-                // document.getElementById('passwordPanel').style.display = 'none';
-            }
         });
     </script>
 </body>
